@@ -1,7 +1,7 @@
 <h1 align="center">Dot API Test</h1>
 
-Saya menggunakan pattern MVC
-Mengapa menggunakan pattern MVC?
+Saya menggunakan pattern MVC<br/>
+Mengapa menggunakan pattern MVC?<br/>
 MVC adalah salah satu pattern yang paling umum digunakan dalam pengembangan aplikasi web. Pattern ini memisahkan aplikasi menjadi 3 komponen, yaitu Model, View, dan Controller. Model berisi data dan logika bisnis, View berisi tampilan atau interface, sedangkan Controller mengatur hubungan antara Model dan View serta meng-handle request dari client.
 
 Menggunakan pattern ini memiliki beberapa keuntungan, antara lain:
