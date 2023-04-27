@@ -1,4 +1,4 @@
-<h1 align="center">Dot API Test</h1>
+<h1 align="center">DOT Product API</h1>
 
 Saya menggunakan pattern MVC<br/>
 Mengapa menggunakan pattern MVC?<br/>
