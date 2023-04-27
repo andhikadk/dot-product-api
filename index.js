@@ -1,28 +1,20 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import cookieParser from 'cookie-parser';
+
+import db from './config/database.js';
 import userRoute from './routes/userRoute.js';
 import productRoute from './routes/productRoute.js';
 import authRoute from './routes/authRoute.js';
+import brandRoute from './routes/brandRoute.js';
 
+// Config
 dotenv.config();
 const app = express();
+db();
 
-// Connect to MongoDB
-mongoose.set('strictQuery', true);
-mongoose.connect(process.env.DB_CONNECT, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on('error', (error) => console.error(error));
-db.once('open', () => {
-  console.log('Database connected');
-});
-
-// Middleware
+// Middlewares
 app.use(
   cors({
     credentials: true,
@@ -36,8 +28,9 @@ app.use(express.json());
 app.use('/api', userRoute);
 app.use('/api', productRoute);
 app.use('/api', authRoute);
+app.use('/api', brandRoute);
 app.all('*', (req, res) => {
-  res.status(404).json({ message: 'Not found' });
+  res.status(404).json({ message: 'Route Not found' });
 });
 
 // Server
