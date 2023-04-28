@@ -11,7 +11,7 @@ import brandRoute from './routes/brandRoute.js';
 
 // Config
 dotenv.config();
-const app = express();
+export const app = express();
 db();
 
 // Middlewares
@@ -34,6 +34,7 @@ app.all('*', (req, res) => {
 });
 
 // Server
-app.listen(process.env.APP_PORT, () => {
-  console.log(`Server running at ${process.env.APP_PORT}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}

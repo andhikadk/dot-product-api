@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index",
-    "test": "jest"
+    "test:auth": "jest --runInBand --verbose tests/auth.test.js",
+    "test:brand": "jest --runInBand --verbose tests/brand.test.js",
+    "test": "jest --runInBand --verbose --silent tests"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "mongoose": "^6.9.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.21.4",
     "jest": "^29.5.0",
     "supertest": "^6.3.3"
   }

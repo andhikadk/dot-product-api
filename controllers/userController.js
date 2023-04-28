@@ -32,36 +32,6 @@ export const getUserById = async (req, res) => {
   }
 };
 
-// @desc    Create a user
-// @route   POST /api/users
-// @access  Public
-export const createUser = async (req, res) => {
-  const { name, email, password, confPassword } = req.body;
-  if (!name || !email || !password || !confPassword)
-    return res.status(400).json({ message: 'All field are required' });
-  if (password !== confPassword)
-    return res.status(400).json({ message: 'Password does not match' });
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-  try {
-    const checkEmail = await User.find({ email });
-    if (checkEmail.length > 0) {
-      return res.status(400).json({ message: 'Email already exists' });
-    }
-    await User.create({
-      name,
-      email,
-      password: hashedPassword,
-    });
-    const createdUser = await User.findOne();
-    res
-      .status(201)
-      .json({ message: 'User created successfully', _id: createdUser._id });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
 // @desc    Update a user
 // @route   PUT /api/users/:id
 // @access  Public
