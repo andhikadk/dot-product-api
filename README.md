@@ -25,7 +25,7 @@ Menggunakan pattern ini memiliki beberapa keuntungan, antara lain:
 ## Links
 - [Client App](https://github.com/andhikadk/dot-product-app)
 - [Demo Video](https://loom.com)
-- [API Documentation](https://postman.com)
+- [API Documentation](https://documenter.getpostman.com/view/25266354/2s93CNMtAs)
 
 ## Author
 
