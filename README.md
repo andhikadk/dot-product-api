@@ -6,7 +6,7 @@
 - Express - Framework
 - MongoDB - Database
 - JWT - Authentication
-- Postman - Documentation
+- Postman - Documentation + Testing
 
 ## Project Pattern
 
@@ -25,6 +25,7 @@ Menggunakan pattern ini memiliki beberapa keuntungan, antara lain:
 ## Links
 - [Client App](https://github.com/andhikadk/dot-product-app)
 - [Demo Video](https://loom.com)
+- [API Documentation](https://postman.com)
 
 ## Author
 
