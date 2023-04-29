@@ -60,7 +60,7 @@ export const login = async (req, res) => {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     });
     res.json({ accessToken });
   } catch (error) {
@@ -110,4 +110,13 @@ export const token = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+};
+
+// @desc    Get user profile
+// @route   GET /profile
+// @access  Public
+export const profile = async (req, res) => {
+  return res.status(200).json({
+    user: req.user,
+  });
 };

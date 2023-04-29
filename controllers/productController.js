@@ -7,6 +7,12 @@ import Brand from '../models/Brand.js';
 // @access  Public
 export const getProducts = async (req, res) => {
   try {
+    if (req.user.role === 'admin') {
+      const products = await Product.find()
+        .populate('user', 'name')
+        .populate('brand', 'name');
+      return res.status(200).json(products);
+    }
     const products = await Product.find({
       user: req.user,
     })

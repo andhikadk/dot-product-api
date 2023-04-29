@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import Brand from '../models/Brand.js';
+import Product from '../models/Product.js';
 
 // @desc    Get all brands
 // @route   GET /api/brands
@@ -88,6 +89,7 @@ export const deleteBrand = async (req, res) => {
     if (!brand) {
       return res.status(404).json({ message: 'Brand not found' });
     }
+    await Product.deleteMany({ brand: req.params.id });
     await Brand.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: 'Brand deleted successfully' });
   } catch (error) {
