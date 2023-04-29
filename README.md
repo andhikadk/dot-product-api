@@ -1,4 +1,14 @@
-<h1 align="center">DOT Product API</h1>
+<h1 align="center">Product API</h1>
+
+> Rest API ini merupakan Challenge Backend Node.js dari DOT Indonesia untuk apply intern
+
+## Tech Stack
+- Express - Framework
+- MongoDB - Database
+- JWT - Authentication
+- Postman - Documentation
+
+## Project Pattern
 
 Saya menggunakan pattern MVC<br/>
 Mengapa menggunakan pattern MVC?<br/>
@@ -12,6 +22,10 @@ Menggunakan pattern ini memiliki beberapa keuntungan, antara lain:
 4. Meningkatkan maintainability. Dengan memisahkan aplikasi menjadi beberapa bagian, perawatan dan pemeliharaan aplikasi menjadi lebih mudah.
 5. Meningkatkan reusability. Komponen-komponen yang dibuat dapat digunakan kembali pada aplikasi yang berbeda atau di tempat lain pada aplikasi yang sama.
 
-### Author
+## Links
+- [Client App](https://github.com/andhikadk/dot-product-app)
+- [Demo Video](https://loom.com)
+
+## Author
 
 👤 **Andhika Dwi Khalisyahputra**
